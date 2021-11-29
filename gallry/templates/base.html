@@ -9,14 +9,18 @@
   {% else %}
     <title> KIM GALLRY</title>
   {% endif %}
-
+  <!-- favico -->
+  <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/60639510?v=4">
+  {% block styles %}
+  {% bootstrap_css %}
+  {% endblock %}
 </head>
 <body>
     <!-- navbar -->
     {% include "navbar.html" %}
     <!-- content -->
     {% block content %}
-    <h1>{{date|date:"l d-F Y"}}</h1>
+    <h1 class='text-center'>{{date|date:"l d-F Y"}}</h1>
     {%endblock%}
 
     <!-- footer -->
