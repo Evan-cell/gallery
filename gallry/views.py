@@ -8,17 +8,7 @@ def welcome(request):
     return render(request, 'index.html')
 def news_of_day(request):
     date = dt.date.today()
-
-    # FUNCTION TO CONVERT DATE OBJECT TO FIND EXACT DAY
-   
-    html = f'''
-        <html>
-            <body>
-                <h1>News for  {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+    return render(request, 'index.html', {"date": date,})
 
 def past_days_news(request,past_date):
     
