@@ -1,6 +1,14 @@
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse, Http404
 import datetime as dt
+from .models import photos #import photos model
+
+def index(request):
+    # imports photos and save it in database
+    photo = photos.objects.all()
+    # adding context 
+    ctx = {'photo':photo}
+    return render(request, 'index.html', ctx)
 
 
 # Create your views here.
